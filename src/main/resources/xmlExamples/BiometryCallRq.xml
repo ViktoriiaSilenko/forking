@@ -1,0 +1,17 @@
+<biom:BiometryCallRq xmlns:biom="http://service-it.by/BiometryCallRq">
+  <biom:generalInfo>
+    <biom:msgId>string</biom:msgId>
+    <biom:msgFrom>string</biom:msgFrom>
+    <biom:msgDate>2008-09-29T04:49:45</biom:msgDate>
+    <biom:msgTo>string</biom:msgTo>
+    <biom:replyId>string</biom:replyId>
+    <biom:replyQ>string</biom:replyQ>
+  </biom:generalInfo>
+  <biom:businessInfo>
+    <biom:requestType>Quality</biom:requestType>
+    <biom:callToken>string</biom:callToken>
+    <biom:contactCrmId>string</biom:contactCrmId>
+    <biom:callGuid>string</biom:callGuid>
+    <biom:customerNumber>string</biom:customerNumber>
+  </biom:businessInfo>
+</biom:BiometryCallRq>

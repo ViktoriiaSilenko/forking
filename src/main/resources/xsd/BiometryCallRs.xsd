@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xsd:schema xmlns:tns="http://service-it.by/BiometryCallRs" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service-it.by/BiometryCallRs" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="BiometryCallRs">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="generalInfo" type="tns:generalInfoType">
+					<xsd:annotation>
+						<xsd:documentation>Техническая информация</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="errorInfo" type="tns:errorInfoType">
+					<xsd:annotation>
+						<xsd:documentation>Результат выполнения</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="businessInfo" type="tns:businessInfoType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Бизнес данные</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="generalInfoType">
+		<xsd:sequence>
+			<xsd:element name="msgId" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Уникальный идентификатор запроса (UID)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="msgFrom" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Код источника информации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="msgDate" type="xsd:dateTime">
+				<xsd:annotation>
+					<xsd:documentation>Дата формирования запроса</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="msgTo" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Код получателя информации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="replyId" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Уникальный идентификатор ответа (UID)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="replyQ" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Менеджер и очередь MQ</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="errorInfoType">
+		<xsd:sequence>
+			<xsd:element name="errorCode" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Код результата обработки запроса</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="errorDescription" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Описание ошибки</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="businessInfoType">
+		<xsd:sequence>
+			<xsd:element name="callToken" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Уникальный ключ потока </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="contactCrmId" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Идентификатор  клиента CRM</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="len" type="xsd:float" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation> Длина звонка</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="speechLen" type="xsd:float" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Длина речи, рассчитанная алгоритмом</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="validity" type="xsd:float" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Пригодность записи для извлечения слепка</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="liveness" type="xsd:float" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Оценка живости голоса</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
